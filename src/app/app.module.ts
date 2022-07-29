@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UsersService } from './services/users.service';
+import {MatTableModule} from '@angular/material/table';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -20,7 +22,10 @@ import { UsersService } from './services/users.service';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCheckboxModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+    NgbModule,
+    
   ],
   providers: [
     UsersService

@@ -1,4 +1,25 @@
-<div 
-    *ngFor="let user of users"
-    >{{user.name}} 
-</div>
+<table class="table table-hover table-custom spacing8" id="data-table">
+    <thead>
+        <tr> 
+            <th>Picture</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Location</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>Phone number</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td></td>
+            <td>{{user.name.first}} {{user.name.last}}</td>
+            <td>{{user.gender}}</td>
+            <td>{{user.location.city}}, {{user.location.country}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.dob.age}}</td>
+            <td>{{user.phone}}</td>
+        </tr>  
+        
+    </tbody>
+</table>
