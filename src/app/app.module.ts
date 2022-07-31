@@ -9,7 +9,15 @@ import { UsersComponent } from './users/users.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UsersService } from './services/users.service';
 import {MatTableModule} from '@angular/material/table';
+import {MatInputModule} from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MatSelectModule } from '@angular/material/select';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableExporterModule } from 'mat-table-exporter';
+import { MatSortModule } from '@angular/material/sort';
+import { TableVirtualScrollModule } from 'ng-table-virtual-scroll';
+import {ScrollingModule} from '@angular/cdk/scrolling';
 
 
 @NgModule({
@@ -24,7 +32,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatCheckboxModule,
     HttpClientModule,
     MatTableModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatSelectModule,
     NgbModule,
+    MatPaginatorModule,
+    MatTableExporterModule,
+    MatSortModule
+
+    // TableVirtualScrollModule,
+    // ScrollingModule
     
   ],
   providers: [
