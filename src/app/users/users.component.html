@@ -19,6 +19,11 @@
 
 
         <table matTableExporter mat-table matSort [dataSource]="dataSource" #exporter="matTableExporter">
+             <!-- Pic Column -->
+             <ng-container matColumnDef="dp">
+                <th mat-header-cell  *matHeaderCellDef> Image </th>
+                <td mat-cell *matCellDef="let user"> <img [src]="user.picture.thumbnail" /></td>
+            </ng-container>
 
             <!-- Name Column -->
             <ng-container matColumnDef="name">

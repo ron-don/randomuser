@@ -13,7 +13,7 @@ import * as _ from 'lodash';
 })
 export class UsersComponent implements OnInit {
   users: any = [];
-  displayedColumns: string[] = ['name', 'gender', 'location', 'e-mail', 'current age', 'registration seniority', 'phone number'];
+  displayedColumns: string[] = ['dp', 'name', 'gender', 'location', 'e-mail', 'current age', 'registration seniority', 'phone number'];
   dataSource!: MatTableDataSource<any> ;
   usersData: any;
   show: boolean = false;
