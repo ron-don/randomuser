@@ -21,32 +21,34 @@ export class UsersComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  // dataSource = new MatTableDataSource(this.users);
 
   constructor(private service: UsersService) { }
 
+  //code that runs on page initialization.
   ngOnInit(): void {
     this.getUsersList();
-    this.dataSource.paginator = this.paginator;
   }
 
+  //fetch list of all users from api
   getUsersList() {
     this.service.getUsers().subscribe((res: any) => {
       this.usersData = res.results
         console.log(res.results);   
 
         this.dataSource = new MatTableDataSource(this.usersData);
-        this.apiResponse = this.usersData;
-        this.dataSource.paginator = this.paginator;
-        this.dataSource.sort = this.sort;
+        this.apiResponse = this.usersData;  //for gender filtering
+        this.dataSource.paginator = this.paginator;  //paginator functionality
+        this.dataSource.sort = this.sort;  //sort columns
     });
   }
 
+  //seach country by nationality abbreviation.
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue;
+    this.dataSource.filter = filterValue.toLowerCase();
   }
 
+  //filter gender by selecting male or female.
   onChange($event: any) {
     let filteredData = _.filter(this.apiResponse, (item) => {
       return item.gender == $event.value;
@@ -54,6 +56,7 @@ export class UsersComponent implements OnInit {
     this.dataSource = new MatTableDataSource(filteredData);
   }
 
+  //add or remove columns
   toggleColumns() {
     this.show = !this.show;
   }
