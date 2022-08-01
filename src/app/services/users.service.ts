@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UsersService {
 
-  private url ='https://randomuser.me/api/?results=20';
+  private url ='https://randomuser.me/api/?results=100';
 
   constructor(private http: HttpClient) { }
 

@@ -16,6 +16,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableExporterModule } from 'mat-table-exporter';
 import { MatSortModule } from '@angular/material/sort';
+import {MatButtonModule} from '@angular/material/button';
 import { TableVirtualScrollModule } from 'ng-table-virtual-scroll';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 
@@ -38,8 +39,9 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
     NgbModule,
     MatPaginatorModule,
     MatTableExporterModule,
-    MatSortModule
-
+    MatSortModule,
+    MatButtonModule
+  
     // TableVirtualScrollModule,
     // ScrollingModule
     

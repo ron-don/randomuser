@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Random User';
+  subtitle = "A SPA that fetches random users and their details."
 }
