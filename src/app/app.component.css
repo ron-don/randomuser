@@ -1,6 +1,26 @@
 .main-header {
-    font-size: 80px;
-    font-family: 'Montserrat', sans-serif;
+    font-size: 2.9rem;
+    text-align: center;
+    font-family: 'Segoe UI';
     color: #5b554e;
     font-weight: 500;
+    margin-top: auto;
+    margin-bottom: auto;
 }
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(4, 186, 59, 0.2);
+    transition: 0.3s;
+  }
+  
+  /* On mouse-over, add a deeper shadow */
+  .card:hover {
+    box-shadow: 0 8px 26px 0 rgba(4, 186, 59, 0.2);
+  }
+  
+  /* Add some padding inside the card container */
+  .container {
+    padding: 2px 16px;
+    width: 100%;
+  }

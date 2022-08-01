@@ -1,8 +1,8 @@
-<div>
-    <div class="table-container mat-elevation-z8">
-        <div>
-            <mat-form-field>
-                <mat-label>Filter Gender</mat-label>
+<div class="table-card">
+    <div style="overflow-x:auto;" class="table-container mat-elevation-z8">
+        <div class="filter-container">
+            <mat-form-field appearance="fill">
+                <mat-label>Gender Filter</mat-label>
                 <mat-select (selectionChange)="onChange($event)">
                     <mat-option value="male">Male</mat-option>
                     <mat-option value="female">Female</mat-option>
@@ -10,19 +10,21 @@
             </mat-form-field>
         </div>
 
-        <div>
+        <div class="filter-container">
             <mat-form-field appearance="fill">
-                <!-- <mat-label>Nationality Gender</mat-label> -->
-                    <input matInput placeholder="search" autocomplete="off" (keyup)="applyFilter($event)">
+                <mat-label>Nationality Filter</mat-label>
+                <input matInput placeholder="search by abbreviation" autocomplete="off" (keyup)="applyFilter($event)">
             </mat-form-field>
         </div>
 
 
-        <table matTableExporter mat-table matSort [dataSource]="dataSource" #exporter="matTableExporter">
-             <!-- Pic Column -->
-             <ng-container matColumnDef="dp">
-                <th mat-header-cell  *matHeaderCellDef> Image </th>
-                <td mat-cell *matCellDef="let user"> <img [src]="user.picture.thumbnail" /></td>
+        <table class="styled-table" matTableExporter mat-table matSort [dataSource]="dataSource"
+            #exporter="matTableExporter">
+            <!-- Pic Column -->
+            <ng-container matColumnDef="dp">
+                <th mat-header-cell *matHeaderCellDef> Image </th>
+                <td mat-cell *matCellDef="let user"> <img [src]="user.picture.thumbnail"
+                        [alt]="user.picture.thumbnail" /></td>
             </ng-container>
 
             <!-- Name Column -->
@@ -33,8 +35,8 @@
 
             <!-- Gender Column -->
             <ng-container matColumnDef="gender">
-                <th mat-header-cell [hidden]="show" *matHeaderCellDef> Gender </th>
-                <td mat-cell [hidden]="show" (click)="toggleColumns()" *matCellDef="let user"> {{user.gender}} </td>
+                <th mat-header-cell [hidden]="show" (click)="toggleColumns()" *matHeaderCellDef> Gender </th>
+                <td mat-cell [hidden]="show" *matCellDef="let user"> {{user.gender}} </td>
             </ng-container>
 
             <!-- Location Column -->
@@ -70,13 +72,15 @@
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
-        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
-    </div>
-    <div class="export-buttons">
-        <button mat-raised-button
-            (click)="exporter.exportTable('xlsx', {fileName:'random users', sheet: 'sheet_name', Props: {Author: 'Ronny'}})">Excel</button>
-        <button mat-raised-button (click)="exporter.exportTable('csv')">Csv</button>
-        <div>
+
+        <mat-paginator class="paginator-container" [pageSizeOptions]="[10, 15, 20]" showFirstLastButtons></mat-paginator>
+
+        <div class="export-buttons">
+            <button mat-raised-button
+                (click)="exporter.exportTable('xlsx', {fileName:'random users', sheet: 'sheet_name', Props: {Author: 'Ronny'}})">Excel</button>
+                <span></span>
+            <button mat-raised-button (click)="exporter.exportTable('csv')">CSV</button>
         </div>
     </div>
+
 </div>
