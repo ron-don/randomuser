@@ -42,7 +42,7 @@ export class UsersComponent implements OnInit {
     });
   }
 
-  //seach country by nationality abbreviation.
+  //search country by nationality abbreviation.
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.toLowerCase();
